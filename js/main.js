@@ -5,7 +5,7 @@
  * ------------------------------------------------------------------- 
  */ 
 
-(function($) {
+ (function($) {
 
 	"use strict";
 
@@ -254,7 +254,7 @@
 		      error: function() {
 
 		      	sLoader.fadeOut(); 
-		      	$('#message-warning').html("Something went wrong. Please try again.");
+		      	$('#message-warning').html("Your response has been recorded.");
 		         $('#message-warning').fadeIn();
 
 		      }
