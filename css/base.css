@@ -20,7 +20,7 @@
  *
  * ------------------------------------------------------------------- 
  */
-html {
+ html {
 	font-family: sans-serif;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -372,6 +372,7 @@ fieldset {
 
 input[type="email"],
 input[type="number"],
+input[type="age"],
 input[type="search"],
 input[type="text"],
 input[type="tel"],

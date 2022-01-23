@@ -512,6 +512,7 @@
  }
  input[type="email"],
  input[type="number"],
+ input[type="age"],
  input[type="search"],
  input[type="text"],
  input[type="tel"],
@@ -587,6 +588,7 @@
  }
  input[type="email"]:focus,
  input[type="number"]:focus,
+ input[type="age"]:focus,
  input[type="search"]:focus,
  input[type="text"]:focus,
  input[type="tel"]:focus,
@@ -2326,6 +2328,7 @@
  #contact input[type="text"],
  #contact input[type="password"],
  #contact input[type="email"],
+ #contact input[type="age"],
  #contact textarea {
      width: 100%;
      color: rgba(255, 255, 255, 0.7);
@@ -2335,12 +2338,14 @@
  }
  #contact input[type="text"],
  #contact input[type="password"],
+ #contact input[type="age"],
  #contact input[type="email"] {
      height: 6.6rem;
      padding: 1.8rem 2rem;
  }
  #contact input[type="text"]:focus,
  #contact input[type="password"]:focus,
+ #contact input[type="age"]:focus,
  #contact input[type="email"]:focus {
      border-color: #FF0077;
      color: #FFFFFF;
