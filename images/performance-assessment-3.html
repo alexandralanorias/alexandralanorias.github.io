@@ -7,7 +7,7 @@
    <!--- basic page needs
    ================================================== -->
    <meta charset="utf-8">
-	<title>Style Demo - Kards</title>
+	<title>Performance Assessment #3</title>
 	<meta name="description" content="">  
 	<meta name="author" content="">
 
@@ -33,7 +33,10 @@
      	}
      	#styles .section-intro {
    		max-width: 800px;
-     	}
+    }
+	table thead, table tr:hover {
+        background-color: #f1f1f1;
+    }
       	
    </style>       
 
@@ -65,8 +68,8 @@
 		   	<nav id="main-nav-wrap">
 					<ul class="main-navigation">
 						<li><a href="index.html#intro" title="">Home</a></li>
-						<li><a href="index.html#about" title="">About</a></li>
-						<li><a href="index.html#resume" title="">Resume</a></li>
+						<li><a class="smoothscroll" href="#styles" title="">Overview</a></li>
+						<li><a class="smoothscroll" href="#about" title="">Multilingual</a></li>
 						<li><a href="index.html#portfolio" title="">Portfolio</a></li>
 						<li><a href="index.html#services" title="">Services</a></li>					
 						<li><a class="smoothscroll"  href="#contact" title="">Contact</a></li>	
@@ -221,6 +224,85 @@
 		</div> <!-- /row -->
 		   	
    </section> <!--styles -->	
+
+   <section id="about">
+	<div class="row add-bottom">
+
+		<div class="col-twelve">
+
+			<div class="section-intro">
+
+					<h1>Chuuya's Name in other languages.</h1>
+					<p>Search for your country down below and check how to say Nakahara-sensei's name in your area.</p>
+	 
+			</div>
+
+			<div class="row">
+				<div class="col-twelve tab-full">
+							<label for="sampleInput">Your country</label>
+							<input class="full-width" type="text" placeholder="Philippines" id="myInput" onkeyup="myFunction()" title="type in your country">
+				</div>
+			</div>
+
+			<div class="table-responsive">
+
+				<table>
+					<thead>
+					  <tr>
+						<th>Country</th>
+						<th>Chuuya's name in your country</th>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<td>Naruto Uzumaki</td>
+						<td>16</td>
+					  </tr>
+					  <tr>
+						<td>Sakura Haruno</td>
+						<td>16</td>
+					  </tr>
+					  <tr>
+						<td>Sakura Haruno</td>
+						<td>16</td>
+					  </tr>
+					  <tr>
+						<td>Sakura Haruno</td>
+						<td>16</td>
+					  </tr>
+					  <tr>
+						<td>Sakura Haruno</td>
+						<td>16</td>
+					  </tr>
+					  <tr>
+						<td>Sakura Haruno</td>
+						<td>16</td>
+					  </tr>
+					  <tr>
+						<td>Sakura Haruno</td>
+						<td>16</td>
+					  </tr>
+					  <tr>
+						<td>Sakura Haruno</td>
+						<td>16</td>
+					  </tr>
+					  <tr>
+						<td>Sakura Haruno</td>
+						<td>16</td>
+					  </tr>
+					  <tr>
+						<td>Sakura Haruno</td>
+						<td>16</td>
+					  </tr>
+					</tbody>
+				  </table>
+
+			</div>     		
+
+		</div>
+		
+	</div> <!--row -->
+   </section> <!--about -->
 
 	<section id="contact">
 		<div class="row section-intro">
