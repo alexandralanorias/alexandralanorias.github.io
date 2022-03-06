@@ -20,6 +20,7 @@
    <link rel="stylesheet" href="css/base.css">  
    <link rel="stylesheet" href="css/paa4.css">
    <link rel="stylesheet" href="css/vendor.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
    <style type="text/css" media="screen">
 
@@ -89,8 +90,10 @@
 	   			<h1>A Simple CRUD App.</h1>
 
 	   			<p class="intro-position">
-	   				<span>MySQL</span>
-	   				<span>Node.js</span> 
+	   				<span>Create</span>
+	   				<span>Read</span> 
+					<span>Update</span>
+					<span>Delete</span>
 	   			</p>
 
 	   			<a class="button stroke smoothscroll" href="#styles" title="">Try It Now</a>
@@ -113,7 +116,7 @@
 
    			<h1>Tables, Teachers, and Transfer Protocol.</h1>
 
-   			<p class="lead">This webpage acts as a mini CRUD app for a simple school system. The table data is taken from a MySQL table accessed via Node.js.</p>   			
+   			<p class="lead">This webpage acts as a mini CRUD app for a simple school system.</p>   			
 
    		</div>
 
@@ -124,6 +127,13 @@
       	<div class="col-twelve">
 
       		<h3>Teachers</h3>
+
+			<div class="row">
+				<div class="col-twelve tab-full">
+							<label>Teacher Table Filter</label>
+							<input class="full-width" type="text" placeholder="Type ID number..." id="myInput" onkeyup="myFunction()">
+				</div>
+			</div>
 
       		<div class="table-responsive">
 
@@ -137,32 +147,19 @@
 					    </tr>
 					  </thead>
 					  <tbody>
-					    <tr>
-					      <td>1</td>
-					      <td>Dazai</td>
-					      <td>Osamu</td>
-					      <td>Shinji</td>					    
-					    </tr>
-					    <tr>
-					      <td>2</td>
-					      <td>Gojo</td>
-					      <td>Satoru</td>
-					      <td>Zen'in</td>			    
-					    </tr>
-						<tr>
-							<td>3</td>
-							<td>Miya</td>
-							<td>Atsumu</td>
-							<td>Inarizaki</td>			    
-						  </tr>
+					    
 					  </tbody>
 					</table>
+
+					<a class="button stroke full-width" id="clear_teachers">Delete All Teachers</a>
 
       		</div>     		
 
       	</div>
       	
       </div> <!--row -->
+	  <br/>
+	  <br/>
 
 	<div class="row add-bottom">
 
@@ -170,9 +167,16 @@
 
 			<h3>Subjects</h3>
 
+			<div class="row">
+				<div class="col-twelve tab-full">
+							<label>Subject Table Filter</label>
+							<input class="full-width" type="text" placeholder="Type ID number..." id="myInput2" onkeyup="myFunction2()">
+				</div>
+			</div>
+
 			<div class="table-responsive">
 
-				<table>
+				<table id="subjects">
 					<thead>
 					  <tr>
 						<th>ID</th>
@@ -184,38 +188,18 @@
 					  </tr>
 					</thead>
 					<tbody>
-					  <tr>
-						<td>1</td>
-						<td>Philosophy</td>
-						<td>1101</td>
-						<td>5 units</td>
-						<td>50,000</td>
-						<td>5 hours</td>					    
-					  </tr>
-					  <tr>
-						<td>2</td>
-						<td>Quantum Physics</td>
-						<td>1102</td>
-						<td>4 units</td>
-						<td>40,000</td>
-						<td>4 hours</td>					    
-					  </tr>
-					  <tr>
-						<td>3</td>
-						<td>PE: Volleyball</td>
-						<td>1103</td>
-						<td>2 units</td>
-						<td>20,000</td>
-						<td>2 hours</td>					    
-					  </tr>
 					</tbody>
 				  </table>
+
+				  <a class="button stroke full-width" id="clear_subjects">Delete All Subjects</a>
 
 			</div>     		
 
 		</div>
 		
 	</div> <!--row -->
+	<br/>
+	<br/>
 
 	<div class="row add-bottom">
 
@@ -223,9 +207,16 @@
 
 			<h3>Students</h3>
 
+			<div class="row">
+				<div class="col-twelve tab-full">
+							<label>Student Table Filter</label>
+							<input class="full-width" type="text" placeholder="Type ID number..." id="myInput3" onkeyup="myFunction3()">
+				</div>
+			</div>
+
 			<div class="table-responsive">
 
-				<table>
+				<table id="students">
 					<thead>
 					  <tr>
 						<th>ID</th>
@@ -235,26 +226,10 @@
 					  </tr>
 					</thead>
 					<tbody>
-					  <tr>
-						<td>1</td>
-						<td>Nakajima</td>
-						<td>Atsushi</td>
-						<td>Kyoka</td>					    
-					  </tr>
-					  <tr>
-						<td>2</td>
-						<td>Itadori</td>
-						<td>Yuuji</td>
-						<td>Kenjaku</td>			    
-					  </tr>
-					  <tr>
-						<td>3</td>
-						<td>Hinata</td>
-						<td>Shouyou</td>
-						<td>Karasuno</td>			    
-					  </tr>
 					</tbody>
 				  </table>
+
+				  <a class="button stroke full-width" id="clear_students">Delete All Students</a>
 
 			</div>     		
 
@@ -301,7 +276,7 @@
 					       <input name="middlename" type="text" id="tMiddleName" placeholder="Middle Name">
 		           </div>                      
                  <div class="form-field">
-                     <button class="submitform" onclick="addteacher()">Create</button>
+                     <button class="submitform" id="add_teacher">Create</button>
                   </div>
 
       			</fieldset>
@@ -337,25 +312,25 @@
 			   <fieldset>
 
 			   <div class="form-field">
-						 <input name="id" type="text" id="ID" placeholder="ID">
+						 <input name="id" type="text" id="subID" placeholder="ID">
 			   </div>
 			   <div class="form-field">
-					  <input name="title" type="text" id="Title" placeholder="Title">
+					  <input name="title" type="text" id="sTitle" placeholder="Title">
 				</div>
 			   <div class="form-field">
-						 <input name="number" type="text" id="Number" placeholder="Number">
+						 <input name="number" type="text" id="sNumber" placeholder="Number">
 				</div>                       
 				<div class="form-field">
-						<input name="transcriptload" type="text" id="TranscriptLoad" placeholder="Transcript Load">
+						<input name="transcriptload" type="text" id="sTranscriptLoad" placeholder="Transcript Load">
 				</div>
 				<div class="form-field">
-					<input name="payingload" type="text" id="PayingLoad" placeholder="Paying Load">
+					<input name="payingload" type="text" id="sPayingLoad" placeholder="Paying Load">
 			    </div>     
 				<div class="form-field">
-					<input name="teachingload" type="text" id="TeachingLoad" placeholder="Teaching Load">
+					<input name="teachingload" type="text" id="sTeachingLoad" placeholder="Teaching Load">
 			    </div>                 
 			  <div class="form-field">
-				  <button class="submitform">Create</button>
+				  <button class="submitform" id="add_subject">Create</button>
 			   </div>
 
 			   </fieldset>
@@ -391,19 +366,19 @@
 			   <fieldset>
 
 			   <div class="form-field">
-						 <input name="id" type="text" id="ID" placeholder="ID">
+						 <input name="id" type="text" id="sID" placeholder="ID">
 			   </div>
 			   <div class="form-field">
-					  <input name="lastname" type="text" id="LastName" placeholder="Last Name">
+					  <input name="lastname" type="text" id="sLastName" placeholder="Last Name">
 				</div>
 			   <div class="form-field">
-						 <input name="firstname" type="text" id="FirstName" placeholder="First Name">
+						 <input name="firstname" type="text" id="sFirstName" placeholder="First Name">
 				</div>                       
 				<div class="form-field">
-						<input name="middlename" type="text" id="MiddleName" placeholder="Middle Name">
+						<input name="middlename" type="text" id="sMiddleName" placeholder="Middle Name">
 				</div>                      
 			  <div class="form-field">
-				  <button class="submitform">Create</button>
+				  <button class="submitform" id="add_student">Create</button>
 			   </div>
 
 			   </fieldset>
@@ -419,79 +394,6 @@
 	  </div> <!-- /col-twelve -->
 		
 	</div> <!-- /contact-form -->
-
-	<div class="row section-intro">
-		<div class="col-twelve">
-
-			<h5>Delete</h5>
-			<h1>Teachers.</h1>
-
-			<p class="lead">Remove a teacher from the records.</p>
-
-		</div> 
-	</div> <!-- /section-intro -->
-
-	<div class="row">
-
-		<div class="col-twelve">
-
-		   <ul class="stats-tabs">
-				<li><a href="#">1 <em>Dazai</em></a></li>
-				<li><a href="#">2 <em>Gojo</em></a></li>
-				<li><a href="#">3 <em>Atsumu</em></a></li>
-			 </ul>	      		
-
-		</div>	      	
-
-	 </div> <!-- /row -->
-
-	 <div class="row section-intro">
-		<div class="col-twelve">
-
-			<h1>Subjects.</h1>
-
-			<p class="lead">Remove a subject from the records.</p>
-
-		</div> 
-	</div> <!-- /section-intro -->
-
-	<div class="row">
-
-		<div class="col-twelve">
-
-		   <ul class="stats-tabs">
-				<li><a href="#">1 <em>Philosophy</em></a></li>
-				<li><a href="#">2 <em>Quantum Physics</em></a></li>
-				<li><a href="#">3 <em>PE: Volleyball</em></a></li>
-			 </ul>	      		
-
-		</div>	      	
-
-	 </div> <!-- /row -->
-
-	 <div class="row section-intro">
-		<div class="col-twelve">
-
-			<h1>Students.</h1>
-
-			<p class="lead">Remove a student from the records.</p>
-
-		</div> 
-	</div> <!-- /section-intro -->
-
-	<div class="row">
-
-		<div class="col-twelve">
-
-		   <ul class="stats-tabs">
-				<li><a href="#">1 <em>Nakajima</em></a></li>
-				<li><a href="#">2 <em>Itadori</em></a></li>
-				<li><a href="#">3 <em>Hinata</em></a></li>
-			 </ul>	      		
-
-		</div>	      	
-
-	 </div> <!-- /row -->
 		
 	</section> <!-- /contact -->
 
@@ -512,7 +414,7 @@
 	      	<div class="copyright">
 				    <br>
 		        	<span>Encoded by Alexandra Lanorias</span> 
-					<span>Posted February 27, 2022</span>
+					<span>Posted March 06, 2022</span>
 		        	<span>Design by <a href="http://www.styleshout.com/">styleshout</a></span>	         	
 		         </div>		                  
 	      	</div>
@@ -535,21 +437,250 @@
    <script src="js/main.js"></script>
 
    <script>
-	   var teacherautoinc = 3;
+	   var teachers = [];
+	   var subjects = [];
+	   var students = [];
 
-	function addteacher() {
-	  var table = document.getElementById("teachers");
-	  var row = table.insertRow(teacherautoinc);
-	  teacherautoinc++;
-	  var cell1 = row.insertCell(0);
-	  var cell2 = row.insertCell(1);
-	  var cell3 = row.insertCell(2);
-	  var cell4 = row.insertCell(3);
-	  cell1.innerHTML = document.getElementById("tID");
-	  cell2.innerHTML = document.getElementById("tLastName");
-	  cell3.innerHTML = document.getElementById("tFirstName");
-	  cell4.innerHTML = document.getElementById("tMiddleName");
-	}
+            $(document).ready(function() {
+                if(localStorage.getItem('teachers')) {
+                    teachers = JSON.parse(localStorage.getItem('teachers'));
+                    loadTeacherTable();
+                }
+
+                $("#add_teacher").click(function() {
+                    const t_ID = $("#tID").val().trim();
+					const t_LastName = $("#tLastName").val().trim();
+					const t_FirstName = $("#tFirstName").val().trim();
+					const t_MiddleName = $("#tMiddleName").val().trim();
+
+                    if (t_ID == "" || t_LastName == "" || t_FirstName == "" || t_MiddleName == "") {
+                        alert("You have missing teacher fields.");
+                        return;
+                    }
+
+                    const teacher = {ID: t_ID, LastName: t_LastName, FirstName: t_FirstName, MiddleName: t_MiddleName};
+
+                    teachers.push(teacher);
+                    addRow(teacher);
+
+                    localStorage.setItem('teachers', JSON.stringify(teachers));
+                });
+
+                $("#clear_teachers").click(function() {
+                    teachers = [];
+                    localStorage.setItem('teachers', JSON.stringify(teachers));
+                    $('#teachers tbody').empty();
+                });
+            });
+
+			$(document).ready(function() {
+				if(localStorage.getItem('subjects')) {
+                    subjects = JSON.parse(localStorage.getItem('subjects'));
+                    loadSubjectTable();
+                }
+
+				$("#add_subject").click(function() {
+                    const sub_ID = $("#subID").val().trim();
+					const s_Title = $("#sTitle").val().trim();
+					const s_Number = $("#sNumber").val().trim();
+					const s_TranscriptLoad = $("#sTranscriptLoad").val().trim();
+					const s_PayingLoad = $("#sPayingLoad").val().trim();
+					const s_TeachingLoad = $("#sTeachingLoad").val().trim();
+
+                    if (sub_ID == "" || s_Title == ""  || s_Number == "" || s_TranscriptLoad == "" || s_PayingLoad == "" || s_TeachingLoad == "") {
+                        alert("You have missing subject fields.");
+                        return;
+                    }
+
+                    const subject = {ID: sub_ID, Title: s_Title, Number: s_Number, TranscriptLoad: s_TranscriptLoad, PayingLoad: s_PayingLoad, TeachingLoad: s_TeachingLoad};
+
+                    subjects.push(subject);
+                    addRow2(subject);
+
+                    localStorage.setItem('subjects', JSON.stringify(subjects));
+                });
+
+                $("#clear_subjects").click(function() {
+                    subjects = [];
+                    localStorage.setItem('subjects', JSON.stringify(subjects));
+                    $('#subjects tbody').empty();
+                });
+            });
+
+			$(document).ready(function() {
+				if(localStorage.getItem('students')) {
+                    students = JSON.parse(localStorage.getItem('students'));
+                    loadStudentTable();
+                }
+
+				$("#add_student").click(function() {
+                    const s_ID = $("#sID").val().trim();
+					const s_LastName = $("#sLastName").val().trim();
+					const s_FirstName = $("#sFirstName").val().trim();
+					const s_MiddleName = $("#sMiddleName").val().trim();
+
+                    if (s_ID == "" || s_LastName == "" || s_FirstName == "" || s_MiddleName == "") {
+                        alert("You have missing student fields.");
+                        return;
+                    }
+
+                    const student = {ID: s_ID, LastName: s_LastName, FirstName: s_FirstName, MiddleName: s_MiddleName};
+
+                    students.push(student);
+                    addRow3(student);
+
+                    localStorage.setItem('students', JSON.stringify(students));
+                });
+
+                $("#clear_students").click(function() {
+                    students = [];
+                    localStorage.setItem('students', JSON.stringify(students));
+                    $('#students tbody').empty();
+                });
+            });
+
+			function loadTeacherTable() {
+                for(teacher of teachers) {
+                    addRow(teacher);
+                }
+            }
+
+            function addRow(teacher) {
+                let row = document.createElement("tr");
+                let cell = document.createElement("td");
+                cell.innerHTML = teacher.ID;
+                row.appendChild(cell);
+                cell = document.createElement("td");
+                cell.innerHTML = teacher.LastName;
+                row.append(cell);
+				cell = document.createElement("td");
+                cell.innerHTML = teacher.FirstName;
+                row.append(cell);
+				cell = document.createElement("td");
+                cell.innerHTML = teacher.MiddleName;
+                row.append(cell);
+
+                $("#teachers tbody").append(row);
+            }
+
+            function loadSubjectTable() {
+                for(subject of subjects) {
+                    addRow2(subject);
+                }
+            }
+
+            function addRow2(subject) {
+                let row = document.createElement("tr");
+                let cell = document.createElement("td");
+                cell.innerHTML = subject.ID;
+                row.appendChild(cell);
+                cell = document.createElement("td");
+                cell.innerHTML = subject.Title;
+                row.append(cell);
+				cell = document.createElement("td");
+                cell.innerHTML = subject.Number;
+                row.append(cell);
+				cell = document.createElement("td");
+                cell.innerHTML = subject.TranscriptLoad;
+                row.append(cell);
+				cell = document.createElement("td");
+                cell.innerHTML = subject.PayingLoad;
+                row.append(cell);
+				cell = document.createElement("td");
+                cell.innerHTML = subject.TeachingLoad;
+                row.append(cell);
+
+                $("#subjects tbody").append(row);
+            }
+
+			function loadStudentTable() {
+                for(student of students) {
+                    addRow3(student);
+                }
+            }
+
+            function addRow3(student) {
+                let row = document.createElement("tr");
+                let cell = document.createElement("td");
+                cell.innerHTML = student.ID;
+                row.appendChild(cell);
+                cell = document.createElement("td");
+                cell.innerHTML = student.LastName;
+                row.append(cell);
+				cell = document.createElement("td");
+                cell.innerHTML = student.FirstName;
+                row.append(cell);
+				cell = document.createElement("td");
+                cell.innerHTML = student.MiddleName;
+                row.append(cell);
+
+                $("#students tbody").append(row);
+            }
+
+			function myFunction() {
+	  			var input, filter, table, tr, td, i, txtValue;
+	  			input = document.getElementById("myInput");
+	  			filter = input.value.toUpperCase();
+	  			table = document.getElementById("teachers");
+	  			tr = table.getElementsByTagName("tr");
+
+	  			for (i = 0; i < tr.length; i++) {
+					td = tr[i].getElementsByTagName("td")[0];
+					if (td) {
+		  				txtValue = td.textContent || td.innerText;
+
+		  					if (txtValue.toUpperCase().indexOf(filter) > -1) {
+								tr[i].style.display = "";
+		  					} else {
+								tr[i].style.display = "none";
+		  			        }
+				    }       
+	            }
+			}
+
+			function myFunction2() {
+	  			var input, filter, table, tr, td, i, txtValue;
+	  			input = document.getElementById("myInput2");
+	  			filter = input.value.toUpperCase();
+	  			table = document.getElementById("subjects");
+	  			tr = table.getElementsByTagName("tr");
+
+	  			for (i = 0; i < tr.length; i++) {
+					td = tr[i].getElementsByTagName("td")[0];
+					if (td) {
+		  				txtValue = td.textContent || td.innerText;
+
+		  					if (txtValue.toUpperCase().indexOf(filter) > -1) {
+								tr[i].style.display = "";
+		  					} else {
+								tr[i].style.display = "none";
+		  			        }
+				    }       
+	            }
+			}
+
+			function myFunction3() {
+	  			var input, filter, table, tr, td, i, txtValue;
+	  			input = document.getElementById("myInput3");
+	  			filter = input.value.toUpperCase();
+	  			table = document.getElementById("students");
+	  			tr = table.getElementsByTagName("tr");
+
+	  			for (i = 0; i < tr.length; i++) {
+					td = tr[i].getElementsByTagName("td")[0];
+					if (td) {
+		  				txtValue = td.textContent || td.innerText;
+
+		  					if (txtValue.toUpperCase().indexOf(filter) > -1) {
+								tr[i].style.display = "";
+		  					} else {
+								tr[i].style.display = "none";
+		  			        }
+				    }       
+	            }
+			}
+
+
    </script>
 
 </body>
