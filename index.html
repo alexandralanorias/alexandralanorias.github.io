@@ -1,645 +1,174 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js" >
-<head>
-
-    <!--- basic page needs
-    ================================================== -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Alexandra Lanorias</title>
-
-    <script>
-        document.documentElement.classList.remove('no-js');
-        document.documentElement.classList.add('js');
-    </script>
-
-    <!-- CSS
-    ================================================== -->
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/styles.css">
-
-    <!-- favicons
-    ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-
-</head>
-
-
-<body id="top">
-
-
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader" class="line"></div>
-    </div>
-
-
-    <!-- page wrap
-    ================================================== -->
-    <div id="page" class="s-pagewrap">
-
-
-        <!-- # site header 
-        ================================================== -->
-        <header id="masthead" class="s-header">
-
-             <div class="s-header__block">
-                <div class="s-header__branding">
-                    <p class="site-title">
-                        <a href="index.html" rel="home">Alexandra Lanorias.</a>
-                    </p>
-                </div>
-
-                <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
-            </div> <!-- end s-header__block -->
-
-            <div class="row s-header__nav-wrap">
-
-                <nav class="s-header__nav">
-                    <ul>
-                        <li class="current"><a href="#intro" class="smoothscroll">Intro</a></li>
-                        <li><a href="#about" class="smoothscroll">About</a></li>
-                        <li><a href="#works" class="smoothscroll">Works</a></li>
-                        <li><a href="#colophon" class="smoothscroll">Contact</a></li>
-                    </ul>
-                </nav> <!-- end s-header__nav -->
-
-                <ul class="s-header__social">
-                    <li>
-                        <a href="https://www.facebook.com/alexandra.lanorias">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325,1.42-3.592,3.5-3.592 c0.699-0.002,1.399,0.034,2.095,0.107v2.42h-1.435c-1.128,0-1.348,0.538-1.348,1.325v1.735h2.697l-0.35,2.725h-2.348V21H20 c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z"></path></svg>
-                            <span class="u-screen-reader-text">Facebook</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.twitter.com/alexversion2002">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M19.633,7.997c0.013,0.175,0.013,0.349,0.013,0.523c0,5.325-4.053,11.461-11.46,11.461c-2.282,0-4.402-0.661-6.186-1.809 c0.324,0.037,0.636,0.05,0.973,0.05c1.883,0,3.616-0.636,5.001-1.721c-1.771-0.037-3.255-1.197-3.767-2.793 c0.249,0.037,0.499,0.062,0.761,0.062c0.361,0,0.724-0.05,1.061-0.137c-1.847-0.374-3.23-1.995-3.23-3.953v-0.05 c0.537,0.299,1.16,0.486,1.82,0.511C3.534,9.419,2.823,8.184,2.823,6.787c0-0.748,0.199-1.434,0.548-2.032 c1.983,2.443,4.964,4.04,8.306,4.215c-0.062-0.3-0.1-0.611-0.1-0.923c0-2.22,1.796-4.028,4.028-4.028 c1.16,0,2.207,0.486,2.943,1.272c0.91-0.175,1.782-0.512,2.556-0.973c-0.299,0.935-0.936,1.721-1.771,2.22 c0.811-0.088,1.597-0.312,2.319-0.624C21.104,6.712,20.419,7.423,19.633,7.997z"></path></svg>
-                            <span class="u-screen-reader-text">Twitter</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.github.com/alexandralanorias">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"></path></svg>
-                            <span class="u-screen-reader-text">Github</span>
-                        </a>
-                    </li>
-                </ul>  <!-- end s-header__social -->
-
-            </div> <!-- end s-header__nav-wrap -->
-
-        </header> <!-- end s-header -->
-
-
-        <!-- intro
-        ================================================== -->
-        <section id="intro" class="s-intro">
-
-            <div class="row">
-                <div class="column lg-12 s-intro__content">
-
-                    <div class="s-intro__text">
-                        <h1 class="s-intro__text-huge animate-on-load">
-                            Alexandra
-                        </h1>
-                        <!--<h3 class="animate-on-load">CS Undergraduate + Developer</h3>-->
-                    </div>
-
-                    <div class="s-intro__bg"></div>
-
-                </div>
-            </div>
-
-        </section> <!-- end s-intro -->
-
-
-        <!-- about
-        ================================================== -->
-        <section id="about" class="s-about">
-
-
-            <div class="s-about__block s-about__intro">
-
-                <div class="row">
-                    <div class="column lg-12">
-                        <h2 class="text-pretitle animate-on-load">About Me</h2>
-    
-                        <p class="attention-getter animate-on-load">
-                        <b>Website under maintenance!!!</b> <br>
-                        <b>I've recently changed the template of this portfolio website (eh?? how 
-                            <i>recent?</i> check out the repo of this website in 
-                            <a href="https://github.com/alexandralanorias/alexandralanorias.github.io" target="_blank">GitHub</a>
-                            ). Please come back at a later time!</b><br><br>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-                        irure dolor in reprehenderit. Ut enim ad minim veniam, quis nostrud exercitation 
-                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
-                        in reprehenderit in voluptate velit esse cillum dolore eu consectetur adipiscing 
-                        elit, sed do eiusmod.
-                        </p>
-                    </div>
-                </div>
-
-            </div> <!-- end s-about__intro -->
-
-
-            <div class="s-about__block s-about__career">
-
-                <div class="row s-about__career-header">
-                    <div class="column lg-12">
-                        <h2 class="text-pretitle">Resume</h2>
-    
-                        <p class="text-huge-title">
-                        Here is my education, work experience, & some skills I've got.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="row s-about__timeline" data-animate-block>
-                    <div class="column lg-6 stack-on-900 s-about__timeline-section" data-animate-el>
-    
-                        <h2 class="text-subtitle">
-                            Experience
-                        </h2>
-    
-                        <div class="timeline">
-    
-                            <div class="timeline__block">
-                                <div class="timeline__bullet"></div>
-                                <div class="timeline__header">
-                                    <h4 class="timeline__title">Spotify</h3>
-                                    <h5 class="timeline__meta">Product Designer</h5>
-                                    <p class="timeline__timeframe">August 2019 - Present</p>
-                                </div>
-                                <div class="timeline__desc">
-                                    <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
-                                </div>
-                            </div>
-    
-                            <div class="timeline__block">
-                                <div class="timeline__bullet"></div>
-                                <div class="timeline__header">
-                                    <h4 class="timeline__title">Dropbox</h4>
-                                    <h5 class="timeline__meta">Frontend Developer</h5>
-                                    <p class="timeline__timeframe">March 2016 - July 2019</p>
-                                </div>
-                                <div class="timeline__desc">
-                                    <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
-                                </div>
-                            </div>
-    
-                        </div> <!-- end timeline -->
-    
-                    </div> <!-- end s-about__timeline-section -->
-    
-                    <div class="column lg-6 stack-on-900 s-about__timeline-section" data-animate-el>
-    
-                        <h2 class="text-subtitle">
-                            Education
-                        </h2>
-    
-                        <div class="timeline">
-    
-                            <div class="timeline__block">
-                                <div class="timeline__bullet"></div>
-                                <div class="timeline__header">
-                                    <h4 class="timeline__title">Ateneo de Davao University</h3>
-                                    <h5 class="timeline__meta">Bachelor of Science in Computer Science</h5>
-                                    <p class="timeline__timeframe">June 2020 - Present</p>
-                                </div>
-                                <div class="timeline__desc">
-                                    <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
-                                </div>
-                            </div>
-    
-                            <div class="timeline__block">
-                                <div class="timeline__bullet"></div>
-                                <div class="timeline__header">
-                                    <h4 class="timeline__title">Ateneo de Davao University Senior High School</h4>
-                                    <h5 class="timeline__meta">STEM, Pre-Computer Studies Track</h5>
-                                    <p class="timeline__timeframe">July 2018 - March 2020</p>
-                                </div>
-                                <div class="timeline__desc">
-                                    <p>Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.</p>
-                                </div>
-                            </div>
-    
-                        </div> <!-- end timeline -->
-                        
-                    </div> <!-- end s-about__timeline-section -->
-    
-                </div> <!-- end about__timeline -->
-
-                <div class="row s-about__skills" data-animate-block>
-                    <div class="column lg-12" data-animate-el>
-    
-                        <h2 class="text-subtitle">
-                            Skills & Expertise
-                        </h2>
-    
-                        <ul class="skill-bars">
-                            <li>
-                            <div class="progress percent95"></div>
-                            <strong>HTML & CSS</strong>
-                            </li>
-                            <li>
-                            <div class="progress percent70"></div>
-                            <strong>Javascript</strong>
-                            </li>
-                            <li>
-                            <div class="progress percent25"></div>
-                            <strong>ReactJS</strong>
-                            </li>
-                            <li>
-                            <div class="progress percent80"></div>
-                            <strong>Node JS</strong>
-                            </li>
-                            <li>
-                            <div class="progress percent95"></div>
-                            <strong>Figma</strong>
-                            </li>
-                        </ul>
-    
-                    </div>
-                </div> <!-- end s-about__skills -->
-
-                <!--
-
-                <div class="row s-about__clients" data-animate-block>
-                    <div class="column lg-12" data-animate-el>
-    
-                        <h2 class="text-pretitle">Selected Clients</h2>
-    
-                        <ul class="clients-list text-huge-title">
-                            <li><a href="#0">Microsoft</a></li>
-                            <li><a href="#0">Amazon</a></li>
-                            <li><a href="#0">Solana</a></li>
-                            <li><a href="#0">Nike</a></li>
-                            <li><a href="#0">Adidas</a></li>
-                            <li><a href="#0">Polkadot</a></li>
-                            <li><a href="#0">Google</a></li>
-                            <li><a href="#0">Atom</a></li>
-                            <li><a href="#0">Square</a></li>
-                            <li><a href="#0">Brave</a></li>
-                        </ul>
-    
-                    </div>
-                </div> end s-about__clients-->
-
-            </div> <!-- end s-about__career -->
-
-        </section> <!-- end s-about -->
-
-
-        <!-- # works
-        ================================================== -->
-        <section id="works" class="s-works">
-
-            <div class="row">
-                <div class="column lg-12">
-                    <h2 class="text-pretitle">Selected Projects</h2>
-
-                    <p class="text-huge-title">
-                    Selected Projects I Have Worked On.
-                    </p>
-                </div>
-            </div>
-
-            <div class="row folio-list block-lg-one-half block-stack-on-550" data-animate-block>
-
-                <div class="column" data-animate-el>
-                    <div class="folio-item">
-                        <div class="folio-item__thumb">
-                            <a class="folio-item__thumb-link" href="images/portfolio/gallery/g-kinfolk.jpg" Title="The Kinfolk" data-size="1050x700">
-                                <img src="images/portfolio/skaterboy.jpg" 
-                                     srcset="images/portfolio/kinfolk.jpg 1x, images/portfolio/kinfolk@2x.jpg 2x" alt="">
-                            </a>
-                        </div>
-                        <div class="folio-item__info">
-                            <div class="folio-item__meta">
-                                <span class="cat">Branding</span>
-                                <a href="https://www.behance.net/" title="Project Link" class="project-link">Project Link</a>
-                            </div>
-                            <h4 class="folio-item__title">The Kinfolk</h4>
-                        </div>
-                        <div class="folio-item__caption">
-                            <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                        </div>
-                    </div>
-                </div> <!-- end column -->
-                <div class="column" data-animate-el>
-                    <div class="folio-item">
-                        <div class="folio-item__thumb">
-                            <a class="folio-item__thumb-link" href="images/portfolio/gallery/g-grayscale.jpg" title="Grayscale" data-size="1050x700">
-                                <img src="images/portfolio/minimalismo.jpg" 
-                                     srcset="images/portfolio/grayscale.jpg 1x, images/portfolio/grayscale@2x.jpg 2x" alt="">
-                            </a>
-                        </div>
-                        <div class="folio-item__info">
-                            <div class="folio-item__meta">
-                                <span class="cat">UI Design</span>
-                                <a href="https://www.behance.net/" title="Project Link" class="project-link">Project Link</a>
-                            </div>
-                            <h4 class="folio-item__title">Grayscale</h4>
-                        </div>
-                        <div class="folio-item__caption">
-                            <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                        </div>
-                    </div>
-                </div> <!-- end column -->
-                <div class="column" data-animate-el>
-                    <div class="folio-item">
-                        <div class="folio-item__thumb">
-                            <a class="folio-item__thumb-link" href="images/portfolio/gallery/g-lamp.jpg" title="The Lamp" data-size="1050x700">
-                                <img src="images/portfolio/lamp.jpg" 
-                                     srcset="images/portfolio/lamp.jpg 1x, images/portfolio/lamp@2x.jpg 2x" alt="">
-                            </a>
-                        </div>
-                        <div class="folio-item__info">
-                            <div class="folio-item__meta">
-                                <span class="cat">Branding</span>
-                                <a href="https://www.behance.net/" title="Project Link" class="project-link">Project Link</a>
-                            </div>
-                            <h4 class="folio-item__title">The Lamp</h4>
-                        </div>
-                        <div class="folio-item__caption">
-                            <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                        </div>
-                    </div>
-                </div> <!-- end column -->
-                <div class="column" data-animate-el>
-                    <div class="folio-item">
-                        <div class="folio-item__thumb">
-                            <a class="folio-item__thumb-link" href="images/portfolio/gallery/g-tulips.jpg" title="Caffein & Tulips" data-size="1050x700">
-                                <img src="images/portfolio/tulips.jpg" 
-                                     srcset="images/portfolio/tulips.jpg 1x, images/portfolio/tulips@2x.jpg 2x" alt="">
-                            </a>
-                        </div>
-                        <div class="folio-item__info">
-                            <div class="folio-item__meta">
-                                <span class="cat">Web Design</span>
-                                <a href="https://www.behance.net/" title="Project Link" class="project-link">Project Link</a>
-                            </div>
-                            <h4 class="folio-item__title">
-                                Caffein & Tulips
-                            </h4>
-                        </div>
-                        <div class="folio-item__caption">
-                            <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                        </div>
-                    </div>
-                </div> <!-- end column -->
-                <div class="column" data-animate-el>
-                    <div class="folio-item">
-                        <div class="folio-item__thumb">
-                            <a class="folio-item__thumb-link" href="images/portfolio/gallery/g-tropical.jpg" title="Tropical" data-size="1050x700">
-                                <img src="images/portfolio/rucksack.jpg" 
-                                     srcset="images/portfolio/tropical.jpg 1x, images/portfolio/tropical@2x.jpg 2x" alt="">
-                            </a>
-                        </div>
-                        <div class="folio-item__info">
-                            <div class="folio-item__meta">
-                                <span class="cat">Product Design</span>
-                                <a href="https://www.behance.net/" title="Project Link" class="project-link">Project Link</a>
-                            </div>
-                            <h4 class="folio-item__title">Tropical</h4>
-                        </div>
-                        <div class="folio-item__caption">
-                            <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                        </div>
-                    </div>
-                </div> <!-- end column -->
-                <div class="column" data-animate-el>
-                    <div class="folio-item">
-                        <div class="folio-item__thumb">
-                            <a class="folio-item__thumb-link" href="images/portfolio/gallery/g-woodcraft.jpg" title="Woodcraft" data-size="1050x700">
-                                <img src="images/portfolio/woodcraft.jpg" 
-                                     srcset="images/portfolio/woodcraft.jpg 1x, images/portfolio/woodcraft@2x.jpg 2x" alt="">
-                            </a>
-                        </div>
-                        <div class="folio-item__info">
-                            <div class="folio-item__meta">
-                                <span class="cat">Branding</span>
-                                <a href="https://www.behance.net/" title="Project Link" class="project-link">Project Link</a>
-                            </div>
-                            <h4 class="folio-item__title">Woodcraft</h4>
-                        </div>
-                        <div class="folio-item__caption">
-                            <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                        </div>
-                    </div>
-                </div> <!-- end column -->
-    
-            </div> <!-- folio-list -->
-
-            <div class="row testimonials">
-                <div class="column lg-12">
-    
-                    <div class="swiper testimonial-slider">
-    
-                        <div class="swiper-wrapper">
-
-                            <div class="testimonial-slider__slide swiper-slide">
-                                <p>
-                                Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. 
-                                Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. Nisi dolores quaerat fuga rem nihil nostrum.
-                                Laudantium quia consequatur molestias.
-                                </p>
-                                <div class="testimonial-slider__author">
-                                    <img src="images/avatars/user-02.jpg" alt="Author image" class="testimonial-slider__avatar">
-                                    <cite class="testimonial-slider__cite">
-                                        <strong>John Rockefeller</strong>
-                                        <span>Standard Oil Co.</span>
-                                    </cite>
-                                </div>
-                            </div> <!-- end testimonial-slider__slide -->
-            
-                            <div class="testimonial-slider__slide swiper-slide">
-                                <p>
-                                Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-                                Nisi eaque consequatur. Voluptatem dignissimos ut ducimus accusantium perspiciatis.
-                                Quasi voluptas eius distinctio. Atque eos maxime.
-                                </p>
-                                <div class="testimonial-slider__author">
-                                    <img src="images/avatars/user-03.jpg" alt="Author image" class="testimonial-slider__avatar">
-                                    <cite class="testimonial-slider__cite">
-                                        <strong>Andrew Carnegie</strong>
-                                        <span>Carnegie Steel Co.</span>
-                                    </cite>
-                                </div>
-                            </div> <!-- end testimonial-slider__slide -->
-            
-                            <div class="testimonial-slider__slide swiper-slide">
-                                <p>
-                                Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam.  
-                                Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.
-                                Voluptatem dignissimos ut.
-                                </p>
-                                <div class="testimonial-slider__author">
-                                    <img src="images/avatars/user-01.jpg" alt="Author image" class="testimonial-slider__avatar">
-                                    <cite class="testimonial-slider__cite">
-                                        <strong>John Morgan</strong>
-                                        <span>JP Morgan & Co.</span>
-                                    </cite>
-                                </div>
-                            </div> <!-- end testimonial-slider__slide -->
-
-                            <div class="testimonial-slider__slide swiper-slide">
-                                <p>
-                                Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-                                Nisi eaque consequatur. Voluptatem dignissimos ut ducimus accusantium perspiciatis.
-                                Quasi voluptas eius distinctio. Atque eos maxime.
-                                </p>
-                                <div class="testimonial-slider__author">
-                                    <img src="images/avatars/user-05.jpg" alt="Author image" class="testimonial-slider__avatar">
-                                    <cite class="testimonial-slider__cite">
-                                        <strong>Henry Ford</strong>
-                                        <span>Ford Motor Co.</span>
-                                    </cite>
-                                </div>
-                            </div> <!-- end testimonial-slider__slide -->
-        
-                        </div> <!-- end swiper-wrapper -->
-
-                        <div class="testimonial-slider__next">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path></svg>
-                        </div>
-                        <div class="testimonial-slider__prev">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12.707 17.293 8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z"></path></svg>
-                        </div>
-    
-                        <div class="swiper-pagination"></div>
-    
-                    </div> <!-- end testimonial-slider -->
-    
-                </div> <!-- end column -->
-            </div> <!-- end row testimonials -->
-
-        </section> <!-- end s-works -->
-
-
-        <!-- # site footer
-        ================================================== -->
-        <footer id="colophon" class="s-footer">
-
-            <div class="row s-footer__contact-header">
-                <div class="column lg-12">
-                    <h2 class="text-pretitle">Get In Touch</h2>
-
-                    <p class="text-huge-title">
-                        Feel free to reach out if you wanna collaborate with me, or simply have a chat.
-                    </p>
-                </div>
-            </div> <!-- end s-footer__content -->
-
-            <div class="row s-footer__contact-content">
-
-                <div class="column lg-5 md-6 stack-on-900 left-block">
-                    <p>
-                    Dolorum est et corporis. Unde nobis quo rerum aspernatur cum dolorem 
-                    tempore et. Beatae atque nobis qui nam nulla nihil sunt quis. Earum 
-                    minima cum consectetur ab repudiandae sed esse dolores.
-
-                    <div class="s-footer__buttons">
-                        <a href="mailto:amclanorias@addu.edu.ph" class="btn btn--primary u-fullwidth">Say Hello</a>
-                        <a href="https://github.com/alexandralanorias/alexandralanorias/blob/main/readme.md" class="btn btn--stroke u-fullwidth">Get My CV</a>
-                    </div>
-
-                    </p>
-                </div>
-
-                <div class="column lg-4 md-5 stack-on-900 right-block">
-
-                    <div class="s-footer__contact-info" >
-                        <h2 class="text-subtitle">
-                            Start A Project
-                        </h2>
-                        <ul class="link-list">
-                            <li><a href="mailto:amclanorias@addu.edu.ph">amclanorias@addu.edu.ph</a></li>
-                            <li><a href="https://discord.com/app">arekonori#0998</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="s-footer__social">
-                        <h2 class="text-subtitle">
-                            Connect
-                        </h2>
-                        <ul class="link-list">
-                            <li><a href="https://www.facebook.com/alexandra.lanorias">Facebook</a></li>
-                            <li><a href="https://www.twitter.com/alexversion2002">Twitter</a></li>
-                            <li><a href="https://www.github.com/alexandralanorias">Github</a></li>
-                        </ul>
-                    </div>
-                    
-                </div>
-            </div> <!-- end s-footer__contact-content -->
-
-            <div class="row s-footer__bottom">
-                <div class="column ss-copyright">
-                    <span>© Copyright Alexandra Lanorias 2022</span> 
-                    <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
-                </div>
-
-                <div class="ss-go-top">
-                    <a class="smoothscroll" title="Back to Top" href="#top">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M6 4h12v2H6zm5 10v6h2v-6h5l-6-6-6 6z"></path></svg>
-                    </a>
-                </div>
-            </div> <!-- end s-footer__bottom-->
-
-        </footer> <!-- end s-footer -->
-
-    </div> <!-- end s-pagewrap -->
-
-
-    <!-- photoswipe background
-    ================================================== -->
-    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
-
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
-                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
-                    "Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                            <div class="pswp__preloader__cut">
-                                <div class="pswp__preloader__donut"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div>
-                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
-                "Next (arrow right)"></button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
-            </div>
-
-        </div>
-
-    </div> <!-- end photoSwipe background -->
-
-
-    <!-- Java Script
-    ================================================== -->
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-
-</body>
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Spectral by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="landing is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">Spectral</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="generic.html">Generic</a></li>
+											<li><a href="elements.html">Elements</a></li>
+											<li><a href="#">Sign Up</a></li>
+											<li><a href="#">Log In</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<h2>Spectral</h2>
+							<p>Another fine responsive<br />
+							site template freebie<br />
+							crafted by <a href="http://html5up.net">HTML5 UP</a>.</p>
+							<ul class="actions special">
+								<li><a href="#" class="button primary">Activate</a></li>
+							</ul>
+						</div>
+						<a href="#one" class="more scrolly">Learn More</a>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style1 special">
+						<div class="inner">
+							<header class="major">
+								<h2>Arcu aliquet vel lobortis ata nisl<br />
+								eget augue amet aliquet nisl cep donec</h2>
+								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
+								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+							</header>
+							<ul class="icons major">
+								<li><span class="icon fa-gem major style1"><span class="label">Lorem</span></span></li>
+								<li><span class="icon fa-heart major style2"><span class="label">Ipsum</span></span></li>
+								<li><span class="icon solid fa-code major style3"><span class="label">Dolor</span></span></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Two -->
+					<section id="two" class="wrapper alt style2">
+						<section class="spotlight">
+							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
+								<h2>Magna primis lobortis<br />
+								sed ullamcorper</h2>
+								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
+								<h2>Tortor dolore feugiat<br />
+								elementum magna</h2>
+								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
+								<h2>Augue eleifend aliquet<br />
+								sed condimentum</h2>
+								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+							</div>
+						</section>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style3 special">
+						<div class="inner">
+							<header class="major">
+								<h2>Accumsan mus tortor nunc aliquet</h2>
+								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
+								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+							</header>
+							<ul class="features">
+								<li class="icon fa-paper-plane">
+									<h3>Arcu accumsan</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+								<li class="icon solid fa-laptop">
+									<h3>Ac Augue Eget</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+								<li class="icon solid fa-code">
+									<h3>Mus Scelerisque</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+								<li class="icon solid fa-headphones-alt">
+									<h3>Mauris Imperdiet</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+								<li class="icon fa-heart">
+									<h3>Aenean Primis</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+								<li class="icon fa-flag">
+									<h3>Tortor Ut</h3>
+									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								</li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- CTA -->
+					<section id="cta" class="wrapper style4">
+						<div class="inner">
+							<header>
+								<h2>Arcue ut vel commodo</h2>
+								<p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
+							</header>
+							<ul class="actions stacked">
+								<li><a href="#" class="button fit primary">Activate</a></li>
+								<li><a href="#" class="button fit">Learn More</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
